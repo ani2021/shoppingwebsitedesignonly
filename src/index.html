@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Webstore</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/graph.css">
+  </head>
+  <body>
+    <nav id="topnav">
+      <a class="nav-options" href="#">WS</a>
+      <a class="nav-options" href="#">BL</a>
+      <input id="search" autocomplete="off" type="text" placeholder="Search..">
+      <a href="#"><img class="shoppingcart" src="img/shopping-cart.png" alt=""></a>
+      <div class="dropdown-menu">
+        <a id="opt">Opt</a>
+        <br>
+        <div class="dropdown-options">
+          <a href="#">Profile</a>
+          <br>
+          <a>Shopping Lists</a>
+          <br>
+          <a>Membership Benefits</a>
+        </div>
+      </div>
+    </nav>
+    <h3 class="pagebanner">Welcome to Dcomm the home of the free marketplace</h3>
+    <form id="enterlist" class="popup-window popup-form" action="" method="POST">
+      <label for="listname">Enter Name of List</label>
+      <input id="listname" type="text">
+      <br>
+      <br>
+      <button onclick="PopupToggle('enterlist')" class="float-left">Cancel</button>
+      <input class="float-right" type="submit" value="Create List">
+    </form>
+    <div class="grid-setup">
+      <div class="grid-center-content">
+        <div class="box">
+          <img src="img/xbox.jpg" alt="">
+          <h5>Xbox 360</h5>
+          <p class="description">
+            Best Gaming System of the 2000s!
+          </p>
+          <p id="rating">9.8</p>
+          <select id="userlists">
+            <option value="SelectList">Select List</option>
+            <option onclick="hello()" value="NewList">Create New List</option>
+          </select>
+          <button onclick="hello()">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/modifyui.js"></script>
+    <script src="js/datamanagement.js"></script>
+  </body>
+</html>

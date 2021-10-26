@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/graph.css">
+    <script src="js/Chart.bundle.min.js"></script>
+  </head>
+  <body>
+    <nav id="topnav">
+      <a href="#">WS</a>
+      <a href="#">BL</a>
+      <input id="search" autocomplete="off" type="text" placeholder="Search..">
+      <a href="#"><img class="shoppingcart" src="img/shopping-cart.png" alt=""></a>
+      <a id="opt" onclick="ShowMenu(this)" href="#">Opt
+        <!--<div id="dropdownmenu">
+          <a href="#">Profile</a>
+          <a href="#">Shopping Lists</a>
+          <a href="#">Membership Benefits</a>
+        </div>-->
+      </a>
+    </nav>
+    <h1 id="dashtitle">Your Dashboard</h1>
+    <div id="wizard" class="popup-window">
+      <form id="itemwizard" class="popup-form" onsubmit="return ValidateItemsWizard()"  action="">
+        <h3>Add Inventory</h3>
+        <label for="itemname">Enter the name of the item: </label>
+        <input name="itemname" type="text" required>
+        <br>
+        <label for="itemcategory">Enter the category of the item: </label>
+        <input type="text" name="itemcategory" required>
+        <br>
+        <label for="itemprice">Enter the price of the item: </label>
+        <input type="text" name="itemprice" required>
+        <br>
+        <label for="itemquantity">Enter the number of these items you would like to sell: </label>
+        <input type="text" name="itemquantity" required>
+        <br>
+        <input type="submit" class="float-right" value="Send Items">
+      </form>
+    </div>
+    <div id="graphwizard" class="popup-window">
+      <form id="graphsetup" class="popup-form" onsubmit="return ValidateItemsWizard()"  action="">
+        <h3>Graph Setup</h3>        
+        <label for="graphname">Enter the name of the graph: </label>
+        <input type="text">
+        <br>
+        <div id="graphtype">
+          <label for="graph">Enter the graph type: </label>
+          <br>
+          <br>
+          <div id="graph">
+            <label for="bar">Bar</label><input onclick="ShowOptions('items');" type="radio" id="bar" name="graph" value="bar"> <label for="pie">Pie</label><input type="radio" id="pie" name="graph" value="pie"> <label for="line">Line</label><input type="radio" id="line" name="graph" value="line"> 
+          </div> 
+        </div>
+        <br>
+        <div id="coordinatenames">
+          <label for="xcoordinate">Name of X Coordinate: </label>
+          <input id="xcoordinate" type="text" placeholder="Enter Name">
+          <label for="ycoordinate">Name of Y Coordinate: </label>
+          <input id="ycoordinate" type="text" placeholder="Enter Name">
+        </div>
+        <br>
+        <div id="items">
+          <label for="totalitems">Enter Items to Display: </label>
+          <input id="totalitems" type="text" placeholder="Enter #">
+        </div>
+        <label id="datelabel" for="dategraph">Would you need a date range:</label>
+        <br>
+        <br>
+        <input onclick="ShowOptions('dates')" type="radio" id="yes" name="decision" value="yes"> Yes
+        <input onclick="ShowOptions('dates', this.value)" type="radio" id="no" name="decision" value="no"> No
+        <br>
+        <div id="dates">
+          <label id="daterange" for="range">Enter Range:</label>
+          <p><input type="date" id="start" name="range"> to <input type="date" id="end" name="range2"></p>
+        </div>
+        <br>
+        <div id="param">
+          <label for="parameters">Type of parameters for graph: </label>
+          <input name="parameters" type="text" required>
+        </div>
+        <br>
+        <input type="submit" class="float-right" value="Create Graph">
+      </form>
+    </div>
+  <div id="optionswizard" class="popup-window">
+    <form id="optionssetup" class="popup-form" onsubmit="return ValidateItemsWizard()"  action="">
+    </form>
+  </div>
+    <div class="grid-setup">
+      <div class="grid-left-content">
+        <h4>Trends</h4>
+      </div>
+      <div class="grid-center-content border">
+        <h4>Data</h4>
+        <div class="chart-container">
+          <canvas id="myChart"></canvas>
+          <button class="hidegraphbutton">Hide Graph</button>
+        </div>
+        <div class="chart-container">
+          <canvas id="myChart2"></canvas>
+          <button class="hidegraphbutton">Hide Graph</button>
+        </div>
+        <div class="chart-container">
+          <canvas id="myChart3"></canvas>
+          <button class="hidegraphbutton">Hide Graph</button>
+        </div>
+        <div class="chart-container">
+          <canvas id="myChart4"></canvas>
+          <button class="hidegraphbutton">Hide Graph</button>
+        </div>
+      </div>
+      <div class="grid-right-content">
+        <h4>Your Messages</h4>
+      </div>
+    </div>
+    <nav id="bottomnav">
+      <button id="additems" class="float-right bottom-nav-buttons" onclick="PopupToggle('wizard');HideForm('optionswizard', 'optionssetup');HideForm('graphwizard', 'graphsetup')">Add Items to Sell</button>
+      <button id="options" class="float-left bottom-nav-buttons" onclick="PopupToggle('optionswizard');HideForm('wizard', 'itemwizard');HideForm('graphwizard', 'graphsetup')">Options</button>
+      <button id="addgraph" class="float-left bottom-nav-buttons" onclick="PopupToggle('graphwizard');HideForm('optionswizard', 'optionssetup');HideForm('wizard', 'itemwizard')">Add Graph</button>
+    </nav>
+    <script src="js/modifyui.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/graphs.js"></script>
+    <script>
+			/*
+        var items = @EcommerceStore.Services.JavaScriptConvertService.SerializeObject(@ViewBag.Items);
+        console.log(items);
+        DisplayGraphs(items);
+      */
+		</script>
+  </body>
+</html>

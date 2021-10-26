@@ -1,0 +1,9 @@
+.chart-container 
+{
+  margin: 20px;
+  float: left;
+  position: relative;
+  min-height: 22vh;
+  min-width: 22vw;
+  padding-bottom: 10px;
+}

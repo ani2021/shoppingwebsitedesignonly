@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav>
+      <a href="#">WS</a>
+      <a href="#">BL</a>
+      <input id="search" autocomplete="off" type="text">
+      <a href="#"><img class="shoppingcart" src="img/shopping-cart.png" alt=""></a>
+      <a href="#">Opt</a>
+    </nav>
+    <div class="container">
+      <div class="center">
+        <form name="registration" class="form" onsubmit="return ValidateRegistration()" method="post">
+					<label class="formitem" for="username">Enter Username</label>
+          <input id="username" type="text" required>
+          <br />
+					<label class="formitem" for="email">Enter Email</label>
+					<input id="email" type="email" required>
+					<br />
+					<label for="reemail">Reenter Email</label>
+					<input id="reemail" type="email" required>
+					<br />
+					<label for="password">Enter Password</label>
+					<input id="password" type="password" required>
+					<br />
+					<label for="repassword">Reenter Password</label>
+					<input id="repassword" type="password" required>
+					<br />
+					<input type="submit" value="Register" class="submit" />
+        </form>
+      </div>
+    </div>
+    <script src="js/validation.js"></script>
+  </body>
+</html>

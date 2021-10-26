@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav>
+      <a href="#">WS</a>
+      <a href="#">BL</a>
+      <input id="search" autocomplete="off" type="text">
+      <a href="#"><img class="shoppingcart" src="img/shopping-cart.png" alt=""></a>
+      <a href="#">Opt</a>
+    </nav>
+    <div class="grid-container-search-results">
+      <div class="grid-search-filter ">
+        <p>Filter Results</p>
+        <div id="price">
+          <label>Price Range</label>
+          <br>
+          <div class="filter-bar-indent-options">
+            <label for="minprice">Min Price</label>
+            <input class="price-range" id="minprice" type="text">
+            <br>
+            <label for="maxprice">Max Price</label>
+            <input class="price-range" id="maxprice" type="text">
+          </div>
+        </div>
+        <br>
+        <div id="rating">
+          <label>Rating</label>
+          <br>
+          <input type="radio" id="fivestar" name="rating">
+          <label for="fivestar">Five Stars</label>
+          <br>
+          <input type="radio" id="fourstar" name="rating">
+          <label for="fourstar">Four Stars+</label>
+          <br>
+          <input type="radio" id="threestar" name="rating">
+          <label for="threestar">Three Stars+</label>
+          <br>
+          <input type="radio" id="twostar" name="rating">
+          <label for="fivestar">Two Stars+</label>
+          <br>
+          <input type="radio" id="onestar" name="rating">
+          <label for="fivestar">One Stars+</label>
+        </div>
+        <br>
+        <div id="date">
+          <label>Date</label>
+          <br>
+          <div class="filter-bar-indent-options">
+            <label for="daterelease">Begin Date</label>
+            <input class="price-range" type="text" id="daterelease" name="date">
+            <br>
+            <label for="daterelease">End Date</label>
+            <input class="price-range" type="text" id="lastdate" name="date">
+          </div>
+          <br>
+        </div>
+      </div>
+      <div class="grid-search-results">
+        <div class="grid-item grid-product-container">
+          <img class="item-img" src="img/xbox.jpg" alt="">
+          <p class="grid-product-description">
+            This is an amazing xbox!
+          </p>
+          <p class="grid-product-price">$350<span class="delete">&#10006</span></p>
+        </div>
+        <br>
+        <p class="item-separator"></p>
+        <div class="grid-item grid-product-container">
+          <img class="item-img" src="img/xbox.jpg" alt="">
+          <p class="grid-product-description">
+            This is an amazing xbox!
+          </p>
+          <p class="grid-product-price">$350<span class="delete">&#10006</span></p>
+        </div>
+      </div>
+      <div class="grid-recommendations">
+        <p>Other Recommendations</p>
+      </div>
+    </div>
+  </body>
+</html>

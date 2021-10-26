@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/graph.css">
+  </head>
+  <body>
+    <nav id="topnav">
+      <a class="nav-options" href="#">WS</a>
+      <a class="nav-options" href="#">BL</a>
+      <input id="search" autocomplete="off" type="text" placeholder="Search..">
+      <a href="#"><img class="shoppingcart" src="img/shopping-cart.png" alt=""></a>
+      <div class="dropdown-menu">
+        <a id="opt">Opt</a>
+        <br>
+        <div class="dropdown-options">
+          <a href="#">Profile</a>
+          <br>
+          <a>Shopping Lists</a>
+          <br>
+          <a>Membership Benefits</a>
+        </div>
+      </div>
+    </nav>
+    <div class="grid-setup-detail-page page-background-color">
+      <div class="grid-left-content border-right">
+        <h3 class="item-name">Related Items</h3>
+        <div onclick="SelectItem()" class="side-bar-box">
+          <p class="item-name">Xbox 360</p>
+          <img src="img/xbox.jpg" alt="">
+          <p class="description">
+            Best Gaming System of the 2000s!
+          </p>
+          <p>Rating: 9.8</p>
+        </div>
+      </div>
+      <div class="grid-center-content">
+        <h2 class="item-name">Xbox One</h2>   
+        <div class="purchase-box">
+          <h3>Price: <span>$499</span></h3>
+          <p>In Stock</span></p>
+          <p>Quantity to Purchase: 
+            <select name="" id="quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </p>
+          <button class="purchase-button">Buy Now</button>
+          <br>
+          <button class="purchase-button">Cart Item</button>
+          <p>Add To List: 
+            <select class="list" name="" id="shoppinglists">
+              <option value="Select List">Select List</option>
+              <option value="Dream Systems">Dream Systems</option>
+              <option value="Clothes">Clothes</option>
+              <option value="Computer Build">Computer Build</option>
+              <option value="New List">New List</option>
+            </select>
+          </p>
+        </div>     
+        <img class="details-img" src="img/xbox.jpg" alt="xbox">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. 
+          Fusce id velit ut tortor pretium viverra suspendisse. 
+          Eu feugiat pretium nibh ipsum consequat. 
+          Sit amet tellus cras adipiscing enim eu turpis egestas. 
+          Aliquet eget sit amet tellus cras adipiscing enim eu turpis.
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>
+          <h3>Product Details</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. 
+            Fusce id velit ut tortor pretium viverra suspendisse. 
+            Eu feugiat pretium nibh ipsum consequat. 
+            Sit amet tellus cras adipiscing enim eu turpis egestas. 
+            Aliquet eget sit amet tellus cras adipiscing enim eu turpis.
+          </p>
+        </p>
+      </div>
+    </div>
+    <script src="js/modifyui.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/datamanagement.js"></script>
+  </body>
+</html>
